@@ -1,5 +1,5 @@
 class ForecastSearch
-  attr_reader :forecast, :background_image
+  attr_reader :forecast
   def initialize(city_state)
     @city_state = city_state
     @google_service = GoogleService.new
