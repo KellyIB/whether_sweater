@@ -13,9 +13,8 @@ class AmypodeService < GoogleService
     lat = json[:data][:attributes][:lat]
     lng = json[:data][:attributes][:long]
     a_data = get_antipode_city(lat, lng)
-    binding.pry
+    a_data
   end
-
 
   private
 
