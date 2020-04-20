@@ -33,5 +33,4 @@ class GoogleService
       faraday.params["key"] = ENV["google_key"]
     end
   end
-
 end

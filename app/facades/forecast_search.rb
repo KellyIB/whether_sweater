@@ -19,6 +19,6 @@ class ForecastSearch
 
   def current_forecast
     weather = @open_weather_service.get_current_forecast(@location)
-    return Forecast.new(weather, @location.place_id)
+    Forecast.new(weather, @location.place_id)
   end
 end

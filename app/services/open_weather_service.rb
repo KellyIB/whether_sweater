@@ -9,7 +9,7 @@ class OpenWeatherService
   end
 
   private
-  
+
   def conn
     Faraday.new "https://api.openweathermap.org/data/2.5" do |conn|
       conn.params['appid'] = ENV['OPEN_WEATHER_MAP_KEY']

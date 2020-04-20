@@ -13,5 +13,4 @@ RSpec.describe "weather endpoint" do
     expect(json[:data][:attributes][:hourly].count).to eq(8)
     expect(json[:data][:attributes][:five_day_forecast].count).to eq(5)
   end
-
 end

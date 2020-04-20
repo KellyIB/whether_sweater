@@ -6,5 +6,4 @@ Rails.application.routes.draw do
       get '/forecast', to: 'forecasts#show'
     end
   end
-
 end
