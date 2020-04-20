@@ -1,15 +1,18 @@
 class AntipodeSearch
+  attr_reader :forecast, :id, :antipode, :starting_location, :today
 
-  def initialize(city_state)
-    @city_state = city_state
+  def initialize(starting_location)
+    @starting_location = starting_location
     @amypode_service = AmypodeService.new
     @open_weather_service = OpenWeatherService.new
     @antipode_coordinates = get_antipode_data
-    @forecast = current_antipode_forecast
+    @today = current_antipode_forecast.today
+    @antipode = @location.formatted_address
+    @id = @location.place_id
   end
 
   def get_antipode_data
-    @antipode_data ||= @amypode_service.get_antipode(@city_state)
+    @antipode_data ||= @amypode_service.get_antipode(@starting_location)
     @location ||= Location.new(@antipode_data, self)
   end
 

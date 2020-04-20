@@ -5,8 +5,6 @@ class AntipodeForecast
   def initialize(data, place_id)
     @id = place_id
     @today = current_weather(data)
-    @hourly = hourly_weather_forecast(data)
-    @five_day_forecast = five_days_forecast(data)
   end
 
   def current_weather(data)
