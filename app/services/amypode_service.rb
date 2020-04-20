@@ -1,9 +1,10 @@
 class AmypodeService < GoogleService
 
   def get_antipode(start_city)
-    results = get_geocode_data(start_city)
+    data = get_geocode_data(start_city)
     binding.pry
-    lat =
+    lat = data[:results][0][:geometry][:location][:lat].round(0)
+    long = data[:results][0][:geometry][:location][:lng].round(0)
 
 
     connection = Faraday.new(url: "http://amypode.herokuapp.com") do |faraday|
@@ -11,8 +12,8 @@ class AmypodeService < GoogleService
     end
 
     response = connection.get("/maps/api/geocode/json") do |f|
-      f.params["lat"] = location
-      f.params["long"] = location
+      f.params["lat"] = lat
+      f.params["long"] = long
     end
 
     JSON.parse(response.body, symbolize_names: true)
