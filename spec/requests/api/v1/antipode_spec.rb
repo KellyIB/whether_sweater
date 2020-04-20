@@ -8,9 +8,8 @@ RSpec.describe "weather endpoint" do
     json = JSON.parse(response.body, symbolize_names: true)
 
     expect(json).to_not be_empty
-    binding.pry
-    expect(json[:data][:start_location][:antipode]).to_not be_empty
-    expect(json[:data][:start_location][:antipode]).to_not be_empty
-    expect(json[:data][:attributes][:today].count).to eq(10)
+    expect(json[:data][:attributes][:today].count).to eq(6)
+    expect(json[:data][:attributes][:antipode]).to_not be_empty
+    expect(json[:data][:attributes][:search_location]).to_not be_empty
   end
 end

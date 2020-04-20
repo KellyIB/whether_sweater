@@ -1,35 +1,18 @@
 class GoogleService
-  # def get_location_info(location)
-  #   response = connection.get("/maps/api/place/findplacefromtext/json") do |f|
-  #     f.params["input"] = location
-  #     f.params["inputtype"] = "textquery"
-  #     f.params["fields"] = "photos,place_id"
-  #   end
-  #   get_json(response)
-  # end
-
   def get_geocode_data(location)
     response = connection.get("/maps/api/geocode/json") do |f|
       f.params["address"] = location
     end
     get_json(response)
   end
-# https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=YOUR_API_KEY  # def get_place_image(location)
-  #   response = connection.get("/maps/api/geocode/json") do |f|
-  #     f.params["address"] = location
-  #   end
-  #   get_json(response)
-  # end
 
   def get_antipode_city(lat, lng)
     latlng = "#{lat}" + "," + "#{lng}"
-      response = connection.get("/maps/api/geocode/json") do |f|
-        f.params["latlng"] = latlng
-      end
-      get_json(response)
+    response = connection.get("/maps/api/geocode/json") do |f|
+      f.params["latlng"] = latlng
     end
-
-  # end
+    get_json(response)
+  end
 
   private
 

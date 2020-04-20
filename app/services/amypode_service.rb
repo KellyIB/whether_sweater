@@ -1,5 +1,4 @@
 class AmypodeService < GoogleService
-
   def get_antipode(start_city)
     data = get_geocode_data(start_city)
     lat = data[:results][0][:geometry][:location][:lat]
@@ -9,6 +8,7 @@ class AmypodeService < GoogleService
       f.params["lat"] = lat
       f.params["long"] = long
     end
+
     json = get_antipode_json(resp)
     lat = json[:data][:attributes][:lat]
     lng = json[:data][:attributes][:long]
@@ -27,5 +27,4 @@ class AmypodeService < GoogleService
       faraday.headers["api_key"] = ENV['Amypode_APIKEY']
     end
   end
-
 end

@@ -1,4 +1,4 @@
 class AntipodeForecastSearchSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :id, :today, :antipode, :starting_location
+  attributes :id, :search_location, :antipode, :today
 end
