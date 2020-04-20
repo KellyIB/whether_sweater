@@ -6,7 +6,6 @@ RSpec.describe "weather endpoint" do
     get "/api/v1/antipode?location=#{start_location}"
 
     json = JSON.parse(response.body, symbolize_names: true)
-
     expect(json).to_not be_empty
     expect(json[:data][:attributes][:today].count).to eq(6)
     expect(json[:data][:attributes][:antipode]).to_not be_empty
