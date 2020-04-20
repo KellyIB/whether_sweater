@@ -10,6 +10,7 @@ class AntipodeSearch
 
   def get_antipode_data
     @anipode_data ||= @amypode_service.get_antipode(@city_state)
+    binding.pry
   end
 
 end

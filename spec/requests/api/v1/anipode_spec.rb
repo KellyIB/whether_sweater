@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "weather endpoint" do
   it "has current weather for a city" do
-    start_location = "denver, co"
+    start_location = "hong kong"
     get "/api/v1/antipode?location=#{start_location}"
 
     json = JSON.parse(response.body, symbolize_names: true)
