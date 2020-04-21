@@ -1,3 +1,6 @@
+# rubocop:disable Naming/MemoizedInstanceVariableName
+# rubocop:disable Naming/AccessorMethodName
+
 class BackgroundImageSearch
   attr_reader :id, :photo
   def initialize(city_state)
@@ -12,3 +15,6 @@ class BackgroundImageSearch
     @photograph ||= Photo.new(@photo_data)
   end
 end
+
+# rubocop:enable Naming/MemoizedInstanceVariableName
+# rubocop:enable Naming/AccessorMethodName

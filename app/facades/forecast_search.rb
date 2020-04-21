@@ -1,3 +1,5 @@
+# rubocop:disable Naming/MemoizedInstanceVariableName
+
 class ForecastSearch
   attr_reader :forecast, :background_image
   def initialize(city_state)
@@ -19,3 +21,5 @@ class ForecastSearch
     Forecast.new(weather, @location.place_id)
   end
 end
+
+# rubocop:enable Naming/MemoizedInstanceVariableName
