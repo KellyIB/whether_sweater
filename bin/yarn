@@ -1,3 +1,6 @@
+# rubocop:disable Style/StderrPuts
+# rubocop:disable Style/RedundantBegin
+
 #!/usr/bin/env ruby
 APP_ROOT = File.expand_path('..', __dir__)
 Dir.chdir(APP_ROOT) do
@@ -9,3 +12,6 @@ Dir.chdir(APP_ROOT) do
     exit 1
   end
 end
+
+# rubocop:enable Style/StderrPuts
+# rubocop:enable Style/RedundantBegin

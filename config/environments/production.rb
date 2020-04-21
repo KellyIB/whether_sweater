@@ -1,3 +1,5 @@
+# rubocop:disable Layout/SpaceInsideArrayLiteralBrackets
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -58,7 +60,7 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "app_name_production"
+  # config.active_job.queue_name_prefix = "whether_sweater_production"
 
   config.action_mailer.perform_caching = false
 
@@ -110,3 +112,5 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 end
+
+# rubocop:enable Layout/SpaceInsideArrayLiteralBrackets
