@@ -13,7 +13,6 @@ class TripForecast
     time = hours + minutes_to_hour
   end
 
-
   def hourly_weather_forecast(data, travel_time)
     hourly_weather_today = data[:hourly]
     destination_forecast = {

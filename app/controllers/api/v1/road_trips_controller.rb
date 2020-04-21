@@ -8,4 +8,9 @@ class Api::V1::RoadTripsController < ApplicationController
   end
 end
 
+
+
+
+
+
 # rubocop:enable Style/ClassAndModuleChildren

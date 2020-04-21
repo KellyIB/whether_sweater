@@ -31,7 +31,6 @@ class RoadTripsSearch
     weather = @open_weather_service.get_current_forecast(@destination_location)
     @trip_forecast ||= TripForecast.new(weather, @trip.travel_time)
     @trip_forecast
-    # binding.pry
   end
 end
 
