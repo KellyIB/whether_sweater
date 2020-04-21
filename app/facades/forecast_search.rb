@@ -12,8 +12,8 @@ class ForecastSearch
   end
 
   def geocoding_data
-    @data ||= @google_service.get_geocode_data(@city_state)
-    @location ||= Location.new(@data, self)
+    @data ||= @google_service.get_geocode_data(@location)
+    @location ||= Location.new(@data)
   end
 
   def current_forecast

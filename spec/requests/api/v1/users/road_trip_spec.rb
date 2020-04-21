@@ -12,8 +12,9 @@ RSpec.describe "road trip" do
     json = JSON.parse(response.body, symbolize_names: true)
 
     expect(json).to_not be_empty
-    binding.pry
-    # expect(json[:data][:attributes][:email]).to eq(user.email)
-    # expect(json[:data][:attributes][:api_key]).to eq(user.api_key)
+    expect(json[:data][:attributes][:travel_time]).to eq(2)
+    expect(json[:data][:attributes][:origin]).to eq(user_input[:origin])
+    expect(json[:data][:attributes][:destination]).to eq(user_input[:destination])
+    expect(json[:data][:attributes][:forecast].count).to eq(2)
   end
 end

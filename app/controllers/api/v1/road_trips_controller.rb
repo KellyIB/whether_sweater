@@ -3,8 +3,8 @@
 class Api::V1::RoadTripsController < ApplicationController
 
   def create
-
-    binding.pry
+    road_trip = RoadTripsSearch.new(params[:origin], params[:destination])
+    render json: RoadTripsSearchSerializer.new(road_trip)
   end
 end
 
