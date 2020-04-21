@@ -6,12 +6,9 @@ class ForecastSearch
     @open_weather_service = OpenWeatherService.new
     @google_geocoding_data = geocoding_data
     @forecast = current_forecast
-    # @background_image =
+    @place_id = @forecast.id
   end
 
-  # def get_photo
-  # end
-  #
   def geocoding_data
     @data ||= @google_service.get_geocode_data(@city_state)
     @location ||= Location.new(@data, self)
