@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "road trip" do
-  it "can get info for a new road trip " do
+  it "can get info for a new road trip ", :vcr do
     user = User.create(email: "whatever@example.com", password: "password")
     user_input = { origin: "Denver,CO",
                    destination: "Pueblo,CO",

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "session endpoint" do
-  it "can authenticate a user" do
+  it "can authenticate a user", :vcr do
     user = User.create(email: "whatever@example.com", password: "password")
     user_input = { email: "whatever@example.com",
                    password: "password" }
@@ -15,7 +15,7 @@ RSpec.describe "session endpoint" do
     expect(json[:data][:attributes][:api_key]).to eq(user.api_key)
   end
 
-  it "can't authenticate a user with the wrong password or email" do
+  it "can't authenticate a user with the wrong password or email", :vcr do
     user = User.create(email: "whatever@example.com", password: "password")
     user_input = { email: "whatever@example.com",
                    password: "passrd" }
