@@ -20,7 +20,6 @@ class Forecast
         sunset_dt: Time.at(data[:current][:sunset]).to_s,
         feels_like: data[:current][:feels_like].round(0),
         humidity: data[:current][:humidity].round(0),
-        visibility_in_miles: (data[:current][:visibility]) / 1609.344.round(0),
         uv_index: data[:current][:uvi].round(0) }
   end
 
